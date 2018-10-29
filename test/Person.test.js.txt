@@ -1,0 +1,31 @@
+const assert = require('assert')
+
+
+class Person {
+    say() {
+        return 'helloworld'
+    }
+
+    legs() {
+        return 2
+    }
+}
+
+let p1;
+beforeEach(() => {
+    console.log('创建p1')
+    p1 = new Person()
+})
+
+//descripe是对测试的it进行分组
+//有的是功能性代码，有的是性能的，最好进行分测试
+describe('Person类测试', () => {
+    //it是进行单元测试的具体函数
+    it('测试say方法:', () => {
+        assert.equal(p1.say(), 'helloworld', 'say应该返回helloworld')
+    })
+
+    it('测试leg方法:', () => {
+        assert.equal(p1.legs(), 2, 'legs()方法应该返回2')
+    })
+})
