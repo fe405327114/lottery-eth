@@ -1,5 +1,10 @@
-let web3=require('../src/web3/initWeb3')
-
+// let web3=require('../src/web3/initWeb3')
+// import web3 from './src/web3/initWeb3'
+let Web3=require('web3')
+let web3=new Web3()
+ web3.setProvider(new Web3.providers.HttpProvider('http://localhost:8545'))
+//let provider=new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/02cd1e3c295c425597fa105999493baa")
+// let web3=new Web3(provider)
 //接收编译后的abi和bytecode
 // let {interface,bytecode}=require('./compile')
 let output=require('./compile')

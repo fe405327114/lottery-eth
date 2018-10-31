@@ -8,17 +8,17 @@ address[] public players;
 //中奖人
 address public winner;
 //彩票期数
-uint public round=1;
+uint public round;
 
 //设置管理员
-constructor()public{
+constructor()public payable{
   //部署时第一次调用者是管理员
   manager=msg.sender;
 }
 //下注方法
 function play()public payable {
   //限定一次投1个以太币
-  require(msg.value==1);
+  require(msg.value==1 ether);
   players.push(msg.sender);
 }
 
